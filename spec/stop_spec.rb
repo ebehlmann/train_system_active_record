@@ -5,13 +5,13 @@ describe Stop do
 		station = Station.create({name: 'NEW'})
 		line = Line.create({name: 'Southwest Chief'})
 		stop = Stop.create({station_id: station.id, line_id: line.id})
-		stop.station.should eq station
+		expect(stop.station).to eq(station)
 	end
 
 	it 'belongs to a line' do
 		station = Station.create({name: 'NEW'})
 		line = Line.create({name: 'Southwest Chief'})
 		stop = Stop.create({station_id: station.id, line_id: line.id})
-		stop.line.should eq line
+		expect(stop.line).to eq(line)
 	end
 end
